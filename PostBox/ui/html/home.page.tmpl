@@ -1,0 +1,20 @@
+{{template "base" .}}
+
+{{define "title"}}Home{{end}}
+
+{{define "main"}}
+{{range.Posts}}
+<div class="PostContainer">
+
+        <h2>{{.Title}}</h2>
+        <pre><code>{{.Message}}</code></pre>
+
+        <div class="PostContainerMetadata">
+                <p class="PostContainerMetadataDate">Post created on {{humanDate .Created_on}}</p>
+                <p class="PostContainerMetadataID">Post id #<a href='/post?id={{.ID}}'>{{.ID}}</a></p>
+        </div>
+
+</div>
+<br>
+{{end}}
+{{end}}

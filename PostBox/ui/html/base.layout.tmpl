@@ -1,0 +1,38 @@
+{{define "base"}}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='../static/css/main.css'>
+    <link rel='shortcut icon' href='../static/media/images/logo.png' type='image/x-icon'>
+    <title>{{template "title" .}} - PostBox</title>
+</head>
+
+<body>
+
+    <div class="head-nav">
+        <header><a href="/">PostBox</a></header>
+        <input type="text" placeholder="Search post by title..">
+    </div>
+
+    <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/">Create</a>
+        <a href="/" class="profile-button">Profile</a>
+    </nav>
+    <nav class="sub-nav">
+        <a href="/">Nothing!</a>
+    </nav>
+
+    <main>
+        {{template "main" .}}
+    </main>
+
+    <footer>Made with <a href="https://golang.org/">Go</a> by Victor Aguilera, source code avaliable on <a href="">Github</a></footer>
+
+</body>
+</html>
+{{end}}
