@@ -10,6 +10,8 @@ func (app *app) routes() http.Handler {
 	mux.HandleFunc("/post", app.post)
 	mux.HandleFunc("/post/create", app.create)
 
+	mux.HandleFunc("/user/signup", app.signup)
+
 	fs := http.FileServer(http.Dir("ui/static/"))
 	mux.Handle("/static/", http.StripPrefix("/static", fs))
 

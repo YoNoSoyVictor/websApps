@@ -16,6 +16,7 @@ type app struct {
 	db            *pgxpool.Pool
 	infoLog       *log.Logger
 	errorLog      *log.Logger
+	users         *postgres.UserModel
 	posts         *postgres.PostModel
 	templateCache map[string]*template.Template
 }

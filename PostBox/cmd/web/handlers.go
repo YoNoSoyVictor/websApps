@@ -81,6 +81,19 @@ func (a *app) create(w http.ResponseWriter, r *http.Request) {
 		http.Redirect(w, r, fmt.Sprintf("/post?id=%d", id), http.StatusSeeOther)
 	}
 
-	a.render(w, r, "create.page.tmpl", nil)
+	a.render(w, r, "create.page.tmpl", &TemplateData{})
+}
 
+func (a *app) signup(w http.ResponseWriter, r *http.Request) {
+
+	name := "john"
+	email := "john@mail.example"
+	password := "supersafepassword"
+
+	tag, err := a.users.Signup(name, email, password)
+	if err != nil {
+		a.serverError(w, err)
+	}
+
+	fmt.Fprintln(w, tag)
 }

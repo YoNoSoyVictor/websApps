@@ -27,6 +27,7 @@ func (m *PostModel) Insert(title, message string) (int, error) {
 }
 
 func (m *PostModel) Get(id int) (*models.Post, error) {
+
 	statement := "SELECT id, title, message, created_on FROM posts WHERE id = $1"
 
 	row := m.DB.QueryRow(context.Background(), statement, id)
