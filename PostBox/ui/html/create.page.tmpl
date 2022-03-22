@@ -1,0 +1,37 @@
+{{template "base" .}}
+
+{{define "title"}}Create{{end}}
+
+{{define "main"}}
+<div class="createform">
+<form action="/post/create" method="POST">
+    <h1>CREATE POST</h1>
+    <table>
+        <tr>
+            <td>
+                <label>Title:</label>
+            </td>
+            <td>
+                <input type='text' name='title'>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Message:</label>
+            </td>
+            <td>
+                <textarea name = "message"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <input type="submit" value="image">
+                <input type="submit" value="clear">
+                <input type="submit" value="publish">
+            </td>
+        </tr>
+    </table>
+</form>
+</div>
+{{end}}

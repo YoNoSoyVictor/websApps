@@ -1,0 +1,48 @@
+{{template "base" .}}
+
+{{define "title"}}Signup{{end}}
+
+{{define "main"}}
+<div class="signupform">
+<form action="/user/signup" method="POST">
+    <h1>CREATE USER</h1>
+    <table>
+
+        <tr>
+            <td>
+                <label>name:</label>
+            </td>
+            <td>
+                <input type='text' name='name'>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>email:</label>
+            </td>
+            <td>
+                <input type="text" name='email'>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>password:</label>
+            </td>
+            <td>
+                <input type='text' name='password'>
+            </td>
+        </tr>
+
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <input type="submit" value="create">
+            </td>
+        </tr>
+        
+    </table>
+</form>
+</div>
+{{end}}
